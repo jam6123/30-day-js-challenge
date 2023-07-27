@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background: url('https://img.freepik.com/free-vector/musical-notes-pattern-black-background_1017-32303.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(9, auto);
+    gap: 20px;
+}
+.key {
+    border: 4px solid rgb(75, 75, 0);
+    border-radius: 10px;
+    width: 80px;
+    height: 60px;
+    padding: 40px;
+    transition: .1s;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playing {
+    transform: scale(1.19);
+    border-color: yellow;
+    box-shadow: 0 0 10px .0 yellow,
+                inset 0 0 10px 0 yellow;
+}
+
+span {
+    color: orange;
+}
+
+kbd {
+    font-size: 1.8rem;
+}

@@ -1,0 +1,205 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --clock-dimension: 40vw;
+    --clock-border-clr: rgb(0, 255, 179);
+    --hands-clr: rgb(0, 255, 179);
+}
+
+html {
+    font-size: clamp(1.3rem, 5vw, 6rem);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(360deg,rgb(43, 1, 59), rgb(108, 0, 151));
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.clock {
+    margin: auto;
+    width: clamp(200px, 100%, var(--clock-dimension));
+    overflow: hidden;
+    
+}
+
+.clock__border {
+    border: .2rem solid var(--clock-border-clr);
+    border-radius: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+span {
+    position: absolute;
+    line-height: .8;
+    padding: 10px;
+}
+
+span:nth-of-type(4) {
+    left: 50%;
+    top: 0;
+    translate: -50%;
+}
+
+span:nth-of-type(2) {
+    left: 50%;
+    bottom: 0;
+    translate: -50%;
+}
+
+span:nth-of-type(3) {
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+span:nth-of-type(1) {
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.clock__middle-point {
+    width: 6%;
+    aspect-ratio: 1 / 1 ;
+    border-radius: 100%;
+    background-color: var(--hands-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.clock__dot {
+    width: 730%;
+    position: absolute;
+    right: 50%;
+    transform-origin: 100%;
+}
+
+.clock__dot::before {
+    content: "";
+    display: block;
+    background-color: black;
+    border-radius: 100%;
+    width: 6%;
+    aspect-ratio: 1 / 1;
+}
+
+.clock__dot:nth-of-type(1) {
+    rotate: 30deg;
+}
+
+.clock__dot:nth-of-type(2) {
+    rotate: 60deg;
+}
+
+.clock__dot:nth-of-type(3) {
+    rotate: 120deg;
+}
+
+.clock__dot:nth-of-type(4) {
+    rotate: 150deg;
+}
+
+.clock__dot:nth-of-type(5) {
+    rotate: 210deg;
+}
+
+.clock__dot:nth-of-type(6) {
+    rotate: 240deg;
+}
+
+.clock__dot:nth-of-type(7) {
+    rotate: 300deg;
+}
+
+.clock__dot:nth-of-type(8) {
+    rotate: 330deg;
+}
+
+.clock__hour-hand,
+.clock__minute-hand {
+    width: 26%;
+    height: .07rem;
+    background-color: var(--hands-clr);
+    transform-origin: 100%;
+    border-radius: 100px;
+
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 0 -50%;
+}
+
+.clock__hour-hand::before {
+    content: "";
+    display: block;
+    border: .07rem solid var(--hands-clr);
+    border-top: transparent;
+    border-right: transparent;
+    width: 30%;
+    aspect-ratio: 1 / 1 ;
+    rotate: 45deg;
+
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+/*  to point all the hands to 12 by default  */
+.clock__hands {
+    aspect-ratio: 1;
+    rotate: 90deg;
+}
+
+.clock__hour-hand {
+    width: 20%;
+}
+
+.clock__minute-hand {
+    width: 40%;
+}
+
+.second-hand-container {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    inset: 0;
+}
+
+.clock__second-hand {
+    transform-origin: 100%;
+    border-radius: 100px;
+    width: 40%;
+    height: 1px;
+    background-color: yellow;
+    
+/*  I used animation keyframe to rotate second hand
+    and I used its parent to rotate just at first load based on actual seconds from the Date Object
+    to make the second hand's first position accurate */
+    animation: rotate 60s infinite linear;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
