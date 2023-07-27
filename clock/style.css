@@ -134,13 +134,6 @@ span:nth-of-type(1) {
     width: 26%;
     height: .07rem;
     background-color: var(--hands-clr);
-    transform-origin: 100%;
-    border-radius: 100px;
-
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    translate: 0 -50%;
 }
 
 .clock__hour-hand::before {
@@ -152,11 +145,23 @@ span:nth-of-type(1) {
     width: 30%;
     aspect-ratio: 1 / 1 ;
     rotate: 45deg;
+    translate: 0 -50%;
 
     position: absolute;
     left: 2px;
     top: 50%;
+}
+
+.clock__hour-hand,
+.clock__minute-hand,
+.clock__second-hand {
+    transform-origin: 100%;
+    border-radius: 100px;
     translate: 0 -50%;
+
+    position: absolute;
+    right: 50%;
+    top: 50%;
 }
 
 /*  to point all the hands to 12 by default  */
@@ -167,39 +172,35 @@ span:nth-of-type(1) {
 
 .clock__hour-hand {
     width: 20%;
+    animation: rotate 43200s infinite linear;
 }
 
 .clock__minute-hand {
     width: 40%;
+    animation: rotate 3600s infinite linear;
 }
 
-.second-hand-container {
+.second-hand-container,
+.minute-hand-container,
+.hour-hand-container {
     width: 100%;
     aspect-ratio: 1;
-    position: relative;
+
+    position: absolute;
     inset: 0;
 }
 
 .clock__second-hand {
-    transform-origin: 100%;
-    border-radius: 100px;
     width: 40%;
     height: 1px;
     background-color: yellow;
-    
-/*  I used animation keyframe to rotate second hand
-    and I used its parent to rotate just at first load based on actual seconds from the Date Object
-    to make the second hand's first position accurate */
+
     animation: rotate 60s infinite linear;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    translate: 0 -50%;
 }
 
 @keyframes rotate {
     to {
-        transform: rotateZ(360deg);
+        transform: rotate(360deg);
     }
 }
 
