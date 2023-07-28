@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    width: 70vw;
+    margin: auto;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: .2vw;
+}
+
+.card {
+    height: 30vw;
+    flex: 1;
+    opacity: .6;
+
+    display: flex;
+
+    transition: .3s ease;
+}
+
+.card.expand {
+    height: 40vw;
+    flex: 4;
+    opacity: 1;
+}
+
+img {
+    width: 100%;
+    object-fit: fill;
+}
+
+
+

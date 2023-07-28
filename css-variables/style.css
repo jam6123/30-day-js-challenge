@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    background-color: var(--bg-clr);
+}
+
+h1 {
+    font-size: var(--font-size);
+    color: var(--font-clr);
+    margin-left: var(--margin-left);
+    margin-top: var(--margin-top);
+}
+
+.inputs-container {
+    position: fixed;
+    left: 0;
+    bottom: 20%;
+}
