@@ -26,7 +26,7 @@ body {
 
     display: flex;
 
-    transition: .3s ease;
+    transition: .2s ease-in-out;
 }
 
 .card.expand {
