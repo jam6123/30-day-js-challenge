@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: clamp(.5rem, 5vw, 2rem);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: rgb(45, 0, 87);
+}
+
+.container {
+    margin: auto;
+}
+
+.compass {
+    margin-bottom: 50px;
+    transition: 1s ease;
+
+    position: relative;
+}
+
+.circle {
+    border: 1.4rem solid white;
+    border-radius: 100%;
+    width: 9rem;
+    aspect-ratio: 1 / 1;
+}
+
+span {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: .8;
+    scale: 1.4;
+}
+
+span:nth-of-type(1) {
+    left: 50%;
+    top: .4rem;
+    translate: -50% 0;
+}
+
+span:nth-of-type(1):before {
+    content: "";
+    display: block;
+    border: .6rem solid rgb(255, 0, 0);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -130%;
+}
+
+span:nth-of-type(2) {
+    right: .4rem;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+span:nth-of-type(3) {
+    left: 50%;
+    bottom: .4rem;
+    translate: -50% 0%;
+}
+
+span:nth-of-type(4) {
+    left: .4rem;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.speed {
+    color: rgb(158, 158, 158);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.speed__value {
+    font-size: 2rem;
+    color: white;
+}
