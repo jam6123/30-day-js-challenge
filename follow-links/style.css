@@ -1,0 +1,34 @@
+header {
+    margin: 0 100px;
+    padding: 100px 0;
+}
+
+nav {
+    height: 100px;
+    display: flex;
+
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    margin: auto;
+    padding: 10px 0;
+    font-size: 1.4rem;
+
+    z-index: 1;
+}
+
+.highlight {
+    position: absolute;
+    background-color: blue;
+    opacity: 0;
+    transition: .3s;
+}
+
+.highlight:before {
+    content: "";
+    display: block;
+    background-color: white;
+    height: 90%;
+}

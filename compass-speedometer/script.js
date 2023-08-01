@@ -18,8 +18,17 @@ const geolocation = {coords: {
 
 setInterval(() => {
     geolocation.coords.heading = randomValues[Math.floor(Math.random() * 18)]
-    geolocation.coords.speed = randomValues[Math.floor(Math.random() * 18)]
-
     compass.style.rotate = `${geolocation.coords.heading}deg`
+}, 1000)
+
+setInterval(() => {
+    geolocation.coords.speed = randomValues[Math.floor(Math.random() * 18)]
     speedValue.innerText = `${geolocation.coords.speed}`
-},1000)
+    if(geolocation.coords.speed < 120) {
+        speedValue.style.color = 'white' 
+    }else if(geolocation.coords.speed < 240) {
+        speedValue.style.color = 'orange' 
+    }else {
+        speedValue.style.color = 'red' 
+    }
+}, 2500)

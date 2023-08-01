@@ -20,7 +20,7 @@ body {
 
 .compass {
     margin-bottom: 50px;
-    transition: 1s ease;
+    transition: 10s ease;
 
     position: relative;
 }
@@ -89,4 +89,5 @@ span:nth-of-type(4) {
 .speed__value {
     font-size: 2rem;
     color: white;
+    transition: 1s;
 }
