@@ -8,9 +8,13 @@ links.forEach(link => {
         hl.style.width = `${link.offsetWidth}px`
         hl.style.height = `${link.offsetHeight}px`
         hl.style.opacity = '1'
-        console.log(link.getBoundingClientRect(), link.of)
     })
 })
+
+hl.parentElement.addEventListener('mouseleave', function(e) {
+    hl.style.opacity = '0'
+})
+
 
 /*
     offsetLeft = distance of the element from its parent's left corner (parent's margin is not included)
