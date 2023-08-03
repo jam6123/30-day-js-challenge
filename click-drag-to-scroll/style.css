@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: clamp(1rem, 3vw, 2rem);
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.container {
+    background-color: black;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    perspective: 8rem;
+    user-select: none;
+}
+
+.container:active {
+    cursor: grabbing;
+}
+
+.box {
+    width: 5rem;
+    height: 12rem;
+    flex-shrink: 0;
+
+    display: grid;
+    place-content: center;
+    font-size: 2rem;
+}
+
+.box:nth-child(even) {
+    border: .4rem solid rgb(83, 0, 131);
+    background-color: rgb(110, 3, 172);
+    transform: scaleX(1.07) rotateY(20deg);
+ 
+}
+
+.box:nth-child(odd) {
+    border: .4rem solid rgb(118, 131, 0);
+    background-color: rgb(173, 192, 0);
+    transform: scaleX(1.07) rotateY(-20deg);
+}
+
+
+.box:nth-child(7) {
+    z-index: 8;
+}
+.box:nth-child(8) {
+    z-index: 7;
+}
+.box:nth-child(9) {
+    z-index: 6;
+}
+.box:nth-child(10) {
+    z-index: 5;
+}
+.box:nth-child(11) {
+    z-index: 4;
+}
+.box:nth-child(12) {
+    z-index: 3;
+}
+.box:nth-child(13) {
+    z-index: 2;
+}
+.box:nth-child(14) {
+    z-index: 1;
+}

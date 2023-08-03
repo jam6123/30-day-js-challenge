@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+}
+
+body {
+    height: 120vh;
+    background: linear-gradient(rgb(189, 124, 185), rgb(189, 16, 189), rgb(177, 9, 192));
+    background-repeat: no-repeat;
+}
+
+.menu {
+    padding: 40px;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+
+}
+
+.menu > li {
+    height: 4vw;
+    margin: 0 4vw;
+    background-color: yellow;
+    border-radius: 10px;
+
+    flex: 1;
+    position: relative;
+}
+
+.menu a {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.contacts__dropdown {
+    padding: 3vw;
+}
+
+.contacts__dropdown li {
+    padding: 0 2vw;
+    margin-bottom: 2vw;
+    cursor: pointer;
+    gap: 2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about__dropdown {
+    padding: 4vw;
+    font-size: .8rem;
+    width: 30vw;
+    line-height: 3vw;
+}
+
+.products__dropdown {
+    padding: 2vw;
+    font-size: .8rem;
+    list-style: none;
+}
+
+.products__dropdown li {
+    padding: 2vw;
+    white-space: nowrap;
+}
+
+.payments__dropdown {
+    list-style: none;
+    padding: 2vw;
+    font-size: 1.4vw;
+
+    display: grid;
+    grid-template-columns: 12vw 12vw;
+    column-gap: vw;
+
+  
+}
+
+.dropdown {
+    visibility: hidden;
+    opacity: 0;
+    
+    position: absolute;
+    left: 50%;
+    top: 6vw;
+    translate: -50% 0;
+    
+    z-index: 2;
+}
+
+.dropdown > * {
+    transition: .3s;
+    translate: 30% 0;
+}
+
+.payments__dropdown li {
+    margin-bottom: 2vw;
+}
+
+.payments__dropdown p {
+    font-size: 1vw;
+}
+
+.following-bg {
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    
+    position: absolute;
+
+    z-index: 1;
+}
+
+.following-bg::before {
+    content: "";
+    display: block;
+    width: fit-content;
+    border: 2vw solid white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -100%;
+}

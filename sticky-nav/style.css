@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(204, 204, 204);
+}
+
+.hero-image {
+    background: url('https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vw;
+}
+
+nav {
+    background-color: black;
+    
+    display: flex;
+    align-items: center;
+    
+    position: sticky;
+    top: 0;
+}
+
+a {
+    flex: 1;
+    height: 8vw;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3vw;
+
+    display: grid;
+    place-content: center;
+}
+
+.logo {
+    background-color: rgb(194, 194, 194);
+    color: rgb(113, 0, 136);
+    overflow: hidden;
+    
+    transition: all 1s;
+    max-width: 0;
+}
+
+a.reveal {
+    max-width: 180px;
+}
+
+section {
+    margin: 0 12vw;
+    padding: 5vw;
+    background-color: white;
+}
+
+h2 {
+    font-size: 5vw;
+    margin-bottom: 2rem;
+}
+
+p {
+    line-height: 3vw;
+    font-size: 2vw;
+    margin-bottom: 1.4rem;
+}
