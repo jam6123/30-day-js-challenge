@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+html {
+    font-size: clamp(.3rem, 2vw, 2rem);
+    font-family: Arial, Helvetica, sans-serifs;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    margin: auto;
+    background: linear-gradient(red, rgb(128, 0, 187));
+    width: 34rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-container {
+    font-size: .5rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.time-container > *:not(form) {
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+div[data-time]:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+div[data-time]:active {
+    font-size: .48rem;
+}
+
+.time-container > *:nth-child(4) {
+    color: violet;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+strong {
+    color: red;
+}
+
+form {
+    display: flex;
+    width: 30%;
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+input::placeholder {
+    opacity: .3;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.start-btn {
+    width: 6rem;
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.start-btn:active {
+    color: rgb(136, 136, 136);
+    font-size: .6rem;
+}
+
+.timer {
+    display: grid;
+    place-content: center;
+    font-size: 6rem;
+    flex: 1;
+    color: white;
+}

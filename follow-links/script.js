@@ -8,6 +8,8 @@ links.forEach(link => {
         hl.style.width = `${link.offsetWidth}px`
         hl.style.height = `${link.offsetHeight}px`
         hl.style.opacity = '1'
+
+        console.log(link.offsetLeft)
     })
 })
 
