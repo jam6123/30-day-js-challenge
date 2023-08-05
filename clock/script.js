@@ -14,7 +14,6 @@ function setTime() {
     const currentHour = now.toLocaleTimeString('en-US', { hour12: true });
     const hourDeg = (parseInt(currentHour)/ 12) * 360
     hourHandContainer.style.rotate = `${hourDeg}deg`
-    console.log(secondDeg)
 }
 
 // I call this to position the clock's hands immediately at first load
